@@ -1,226 +1,181 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahriyor Allaberganov | Portfolio</title>
-    
-
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="./photo_2026-04-02_22-07-35.jpg">
-
-    <style>
-        :root {
-            --bg: #000000;
-            --accent: #00d2ff;
-            --text: #ffffff;
-            --card-bg: rgba(255, 255, 255, 0.02);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Space Grotesk', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-        }
-
-        .glow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% -10%, #001220 0%, #000 80%);
-            z-index: -1;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            backdrop-filter: blur(15px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .logo { font-size: 1.4rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #fff;
-            opacity: 0.7;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { opacity: 1; color: var(--accent); }
-
-        .burger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .burger div { width: 25px; height: 2px; background: #fff; transition: 0.3s; }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-        }
-
-        .profile-img {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
-            margin-bottom: 25px;
-        }
-
-        .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 15px; }
-        .hero p { font-size: 1.1rem; color: #aaa; max-width: 750px; line-height: 1.6; margin-bottom: 30px; }
-
-        /* Bog'lanish tugmasi (Contact sahifasiga o'tish uchun) */
-        .cta-btn {
-            padding: 15px 35px;
-            background: var(--accent);
-            color: #000;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 700;
-            transition: 0.3s;
-            display: inline-block;
-        }
-
-        .cta-btn:hover {
-            box-shadow: 0 0 25px var(--accent);
-            transform: translateY(-3px);
-        }
-
-        /* Nimalar qilaman? */
-        .container { padding: 80px 8%; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            transition: 0.4s ease;
-            text-align: center;
-        }
-
-        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
-
-        footer { text-align: center; padding: 50px; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 70px;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.95);
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                padding-top: 50px;
-                transition: 0.5s;
-                backdrop-filter: blur(20px);
-            }
-            .nav-links.active { right: 0; }
-            .burger { display: flex; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ustozlar kuni muborak, Abror ustoz!</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#161a2b;--muted:#5d6480;--accent:#5b5bf0;--accent2:#e8455f;--code:#0f1224;--codetext:#d7dcff;--line:#e3e6f2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d1a;--card:#14172b;--text:#eef0ff;--muted:#9aa1c4;--accent:#8b8bff;--accent2:#ff6b84;--code:#070914;--line:#262a47}}
+:root[data-theme="dark"]{--bg:#0b0d1a;--card:#14172b;--text:#eef0ff;--muted:#9aa1c4;--accent:#8b8bff;--accent2:#ff6b84;--code:#070914;--line:#262a47}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.hero{padding:72px 0 48px;text-align:center;background:radial-gradient(60% 60% at 50% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent)}
+.badge{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card);font-size:14px;color:var(--muted)}
+h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.15;margin:18px 0 12px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:600px;margin:0 auto 28px;color:var(--muted);font-size:1.1rem}
+.btn{border:0;cursor:pointer;font:inherit;font-weight:600;padding:13px 26px;border-radius:12px;color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.editor{margin:40px auto 0;max-width:640px;text-align:left;background:var(--code);border-radius:14px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.2);overflow:hidden}
+.bar{display:flex;gap:7px;padding:12px 14px;background:rgba(255,255,255,.04)}
+.bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar b{margin-left:auto;font:12px ui-monospace,monospace;color:#8087ad;font-weight:400}
+pre{margin:0;padding:18px;font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--codetext);overflow-x:auto;min-height:190px;white-space:pre}
+.k{color:#c792ea}.f{color:#82aaff}.s{color:#c3e88d}.c{color:#6c7399}
+.cur{display:inline-block;width:8px;height:1em;background:var(--accent);vertical-align:-2px;animation:b 1s steps(2) infinite}@keyframes b{50%{opacity:0}}
+section{padding:56px 0}
+h2{font-size:1.8rem;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card .ic{font-size:28px}.card h3{margin:10px 0 6px;font-size:1.1rem}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;text-align:center}
+.stat b{display:block;font-size:2.4rem;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:.95rem}
+.letter{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,5vw,44px)}
+.letter p{font-size:1.08rem;margin:0 0 14px}
+.sign{font-weight:700;color:var(--accent)}
+.field{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+input{flex:1;min-width:180px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+input:focus{outline:2px solid var(--accent);border-color:transparent}
+footer{text-align:center;padding:36px 20px 48px;color:var(--muted);border-top:1px solid var(--line);font-size:.95rem}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:50}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<canvas id="fx"></canvas>
 
-    <div class="glow"></div>
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">🎓 1-oktyabr · Ustozlar va murabbiylar kuni</span>
+    <h1>Hurmatli <span>Abror ustoz</span>,<br>bayramingiz muborak!</h1>
+    <p class="lead">Siz bizga shunchaki kod yozishni emas — o'ylashni, izlashni va xatolardan qo'rqmaslikni o'rgatdingiz.</p>
+    <button class="btn" id="celebrate">🎉 Tabriklash</button>
+    <div class="editor" aria-label="Kod namunasi">
+      <div class="bar"><i></i><i></i><i></i><b>tashakkur.js</b></div>
+      <pre id="code"></pre>
+    </div>
+  </div>
+</header>
 
-    <nav>
-        <a href="#home" class="logo">SHAHRIYOR</a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="https://github.com/shakxriyarr-commits">Portfolio</a></li>
-        </ul>
-        <div class="burger" onclick="toggleMenu()">
-            <div></div><div></div><div></div>
-        </div>
-    </nav>
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Siz o'rgatgan eng muhim darslar</h2>
+    <p class="sub reveal">Dasturlash — faqat sintaksis emas, balki fikrlash tarzi.</p>
+    <div class="grid">
+      <div class="card reveal"><div class="ic">🧠</div><h3>Mantiqiy fikrlash</h3><p>Katta muammoni kichik, hal qilinadigan qismlarga bo'lishni.</p></div>
+      <div class="card reveal"><div class="ic">🐞</div><h3>Xatodan o'rganish</h3><p>Har bir bug — yangi dars ekanini va sabr bilan debug qilishni.</p></div>
+      <div class="card reveal"><div class="ic">✨</div><h3>Toza kod</h3><p>Kod faqat ishlamasligi, balki tushunarli va chiroyli bo'lishi kerakligini.</p></div>
+      <div class="card reveal"><div class="ic">🚀</div><h3>O'z ustida ishlash</h3><p>Hech qachon to'xtamaslik va doimo oldinga intilishni.</p></div>
+    </div>
+  </div>
+</section>
 
-    <section id="home" class="hero">
-        <img src="./photo_2026-04-02_22-07-35.jpg" alt="Shahriyor Allaberganov" class="profile-img">
-        <h1><span>Shahriyor</span> Allaberganov</h1>
-        <p>
-            Assalomu alaykum! Men Shahriyor Allaberganov, professional Telegram bot va saytlar asoschisiman. 
-            Yoshim 14 da. Mening ustozim, <b>Abror Bektemirov</b>, 3 yildan ortiq tajribaga ega professional dasturchi. 
-        </p>
-        <a href="contact.html" class="cta-btn">Men bilan bog'lanish</a>
-    </section>
+<section>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><b data-n="100">0</b><span>% minnatdorchilik</span></div>
+      <div class="stat reveal"><b data-n="1000">0</b><span>+ yozilgan kod qatorlari</span></div>
+      <div class="stat reveal"><b data-n="24">0</b><span>soat ilhom manbai</span></div>
+      <div class="stat reveal"><b>∞</b><span>hurmat va rahmat</span></div>
+    </div>
+  </div>
+</section>
 
-    <section id="work" class="container">
-        <h2 style="text-align: center; font-size: 2.5rem;">Nimalar qilaman?</h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>Veb Saytlar</h3>
-                <p>Zamonaviy, tezkor va barcha qurilmalarga ideal moslashadigan veb-saytlar yaratish.</p>
-            </div>
-            <div class="card">
-                <i class="fab fa-telegram-plane"></i>
-                <h3>Telegram Botlar</h3>
-                <p>Har qanday murakkablikdagi, to'lov tizimli va avtomatlashtirilgan aqlli botlar.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-paint-brush"></i>
-                <h3>UI/UX Dizayn</h3>
-                <p>Foydalanuvchilar uchun qulay va mukammal bo'lgan interfeyslarni loyihalash.</p>
-            </div>
-        </div>
-    </section>
+<section>
+  <div class="wrap">
+    <div class="letter reveal">
+      <h2>Ustozimga maktub</h2>
+      <p>Hurmatli Abror ustoz! Sizning har bir darsingiz biz uchun yangi eshik ochdi. Murakkab narsalarni sodda tushuntira olishingiz, har doim savollarimizga sabr bilan javob berishingiz va bizga ishonishingiz — buning uchun cheksiz rahmat.</p>
+      <p>Siz bergan bilimlar bilan biz nafaqat dastur yozishni, balki hayotda to'g'ri yo'l topishni ham o'rganmoqdamiz. Sizga mustahkam sog'liq, oilaviy baxt, yangi muvaffaqiyatlar va ko'plab iste'dodli shogirdlar tilayman!</p>
+      <p class="sign">— Hurmat bilan, <span id="who">sizning shogirdingiz</span></p>
+      <div class="field">
+        <input id="name" type="text" maxlength="40" placeholder="Ismingizni yozing…" aria-label="Ismingiz">
+        <button class="btn" id="setName">Imzo qo'yish</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        &copy; 2026 Shahriyor Allaberganov | Barcha huquqlar himoyalangan.
-    </footer>
+<footer>
+  <div class="wrap">Abror ustozga mehr bilan, kod orqali yozildi 💙 · 1-oktyabr 2026</div>
+</footer>
 
-    <script>
-        function toggleMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.classList.toggle('active');
-        }
-    </script>
+<script>
+(function(){
+  /* Typing code effect */
+  var lines=[
+    '<span class="c">// Ustozlar kuni — 1-oktyabr</span>',
+    '<span class="k">const</span> ustoz = <span class="s">"Abror"</span>;',
+    '',
+    '<span class="k">function</span> <span class="f">tashakkur</span>(shogird) {',
+    '  <span class="k">return</span> <span class="s">`Rahmat, ${ustoz} ustoz! 🌟`</span>;',
+    '}',
+    '',
+    'console.<span class="f">log</span>(<span class="f">tashakkur</span>(<span class="s">"hammamiz"</span>));'
+  ];
+  var el=document.getElementById('code');
+  var plain=lines.map(function(l){return l});
+  var i=0,html='',reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){el.innerHTML=lines.join('\n');}
+  else{
+    (function typeLine(){
+      if(i>=lines.length){el.innerHTML=html+'<span class="cur"></span>';return;}
+      var tmp=document.createElement('div');tmp.innerHTML=lines[i];
+      var txt=tmp.textContent,n=0;
+      var tag=lines[i];
+      var t=setInterval(function(){
+        n+=3;
+        if(n>=txt.length){clearInterval(t);html+=tag+'\n';i++;el.innerHTML=html+'<span class="cur"></span>';setTimeout(typeLine,120);}
+        else{el.innerHTML=html+txt.slice(0,n)+'<span class="cur"></span>';}
+      },28);
+    })();
+  }
+
+  /* Scroll reveal + counters */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');
+      var b=e.target.querySelector('[data-n]');
+      if(b&&!b.dataset.done){b.dataset.done=1;count(b,+b.dataset.n);}
+      io.unobserve(e.target);}
+  })},{threshold:.2});
+  document.querySelectorAll('.reveal').forEach(function(n){io.observe(n)});
+  function count(b,to){var s=performance.now();(function f(t){var p=Math.min((t-s)/1400,1);b.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)}
+
+  /* Confetti */
+  var cv=document.getElementById('fx'),cx=cv.getContext('2d'),parts=[],run=false;
+  function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+  var cols=['#5b5bf0','#e8455f','#febc2e','#28c840','#38bdf8','#c792ea'];
+  function boom(){
+    for(var k=0;k<160;k++)parts.push({x:innerWidth/2,y:innerHeight*.45,vx:(Math.random()-.5)*16,vy:Math.random()*-14-3,g:.32,s:Math.random()*8+4,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[k%cols.length],l:1});
+    if(!run){run=true;requestAnimationFrame(loop)}
+  }
+  function loop(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    parts=parts.filter(function(p){return p.l>0&&p.y<cv.height+20});
+    parts.forEach(function(p){p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l-=.004;
+      cx.save();cx.globalAlpha=Math.max(p.l,0);cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore()});
+    if(parts.length)requestAnimationFrame(loop);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}
+  }
+  document.getElementById('celebrate').addEventListener('click',boom);
+  setTimeout(boom,900);
+
+  /* Signature (saved in browser, safely) */
+  var who=document.getElementById('who'),inp=document.getElementById('name');
+  try{var s=localStorage.getItem('abror-name');if(s){who.textContent=s;inp.value=s}}catch(e){}
+  document.getElementById('setName').addEventListener('click',function(){
+    var v=inp.value.trim().slice(0,40);if(!v)return inp.focus();
+    who.textContent=v;try{localStorage.setItem('abror-name',v)}catch(e){}boom();
+  });
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('setName').click()});
+})();
+</script>
 </body>
 </html>
